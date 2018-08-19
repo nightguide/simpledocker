@@ -6,4 +6,4 @@ docker build . -t $IMAGE_NAME
 docker login -u nightguidexxx -p N0v0sibirsk!
 docker push $IMAGE_NAME
 
-kubectl set image deployment/simpledocker simpledocker=$IMAGE_NAME
+kubectl set image deployment/simpledocker simpledocker=$IMAGE_NAME -n=dev
