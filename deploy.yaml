@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpledocker
+  namespace: dev
+  labels:
+    app: simpledocker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simpledocker
+  template:
+    metadata:
+      labels:
+        app: simpledocker
+    spec:
+      containers:
+      - name: simpledocker
+        image: nightguidexxx/simpledocker:1
+        ports:
+        - containerPort: 80
