@@ -1,5 +1,5 @@
 !/bin/sh
-BUILD_VER="1"
+BUILD_VER="22"
 IMAGE_NAME="nightguidexxx/simpledocker:$BUILD_VER"
 
 docker build . -t $IMAGE_NAME
