@@ -1,4 +1,4 @@
-!/bin/sh
+!#/bin/sh
 BUILD_VER="69"
 IMAGE_NAME="nightguidexxx/simpledocker:$BUILD_VER"
 
