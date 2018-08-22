@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: simpledocker
+  namespace: dev
+  labels:
+    app: simpledocker
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: simpledocker
+  template:
+    metadata:
+      labels:
+        app: simpledocker
+    spec:
+      containers: 
+      - name: simpledocker
+        image: nightguidexxx/simpledocker:65
+        command: [ "bin/bash", "-c", "./wrapper.sh" ]
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/"
+          name: task-pv-storage
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: grafana-claim       
+   
+        
